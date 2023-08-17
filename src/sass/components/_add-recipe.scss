@@ -1,0 +1,241 @@
+.add-recipe {
+  &__title {
+    font-size: 3.5rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+.add-recipe-window {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.upload {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem 6rem;
+
+  &__column {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 1rem;
+
+    & label {
+      font-size: 2rem;
+      font-weight: 400;
+      color: inherit;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 1.6rem;
+      }
+    }
+
+    & input {
+      font-size: 1.5rem;
+      padding: 1.5rem 3rem;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      transition: all 0.2s;
+      box-shadow: 1rem 0 3rem rgba(0, 0, 0, 0.068);
+
+      &::placeholder {
+        color: $gray-20percent-color;
+      }
+
+      &:focus {
+        outline: none;
+        border: 1px solid $gray-text-color;
+        background-color: $white-color;
+      }
+    }
+
+    &--btn {
+      padding: 1.35rem 5rem;
+      border-radius: 0.5rem;
+      color: $white-color;
+      font-family: inherit;
+      font-size: 1.6rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      background-color: $accent-light-red-color;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid transparent;
+        border-radius: 0.5rem;
+        transition: border-color 0.3s;
+      }
+
+      &.remove {
+        background-color: $accent-light-red-color;
+
+        &:hover {
+          color: $accent-light-red-color;
+          background-color: $white-color;
+          border-color: $accent-light-red-color;
+        }
+
+        &:hover::before {
+          border-color: $accent-light-red-color;
+        }
+      }
+
+      &.add {
+        background-color: $primary-green-color;
+
+      
+        &:hover {
+          color: $primary-green-color;
+          background-color: $white-color;
+          border-color: $primary-green-color;
+        }
+
+        &:hover::before {
+          border-color: $primary-green-color;
+        }
+      }
+    }
+  }
+
+  & button.btn.upload__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__btn {
+    position: relative;
+    border-radius: 10rem;
+    color: $white-color;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    background-color: $accent-light-red-color;
+    width: 28rem; /* Adjust width */
+    height: 5.5rem;
+    justify-self: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid transparent;
+      border-radius: 10rem;
+      transition: border-color 0.3s;
+    }
+
+    & svg {
+      font-size: 2.7rem;
+      margin-right: 1rem;
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+
+    & span {
+      font-size: 1.8rem;
+      align-items: center;
+    }
+
+    &:hover {
+      color: $accent-light-red-color;
+      background-color: $white-color;
+      border-color: $accent-light-red-color;
+    }
+
+    &:hover::before {
+      border-color: $accent-light-red-color;
+    }
+  }
+
+  &__column.two-cols {
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 1rem;
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__column.three-cols {
+    grid-template-columns: repeat(3, 1fr); /* Two columns */
+    gap: 1rem;
+  }
+  &__column.asymmetrical {
+    grid-template-columns: 45fr 45fr 10fr;
+    height: auto;
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__column.ingredient {
+    grid-column: 1/-1;
+  }
+
+  &__column.first {
+    grid-column: 1/2;
+    @include media-breakpoint-down(sm) {
+      grid-column: auto;
+    }
+  }
+  &__column.second {
+    grid-column: 2/3;
+    @include media-breakpoint-down(sm) {
+      grid-column: auto;
+    }
+  }
+  &__column.third {
+    grid-column: 3/4;
+
+    @include media-breakpoint-down(sm) {
+      grid-column: auto;
+    }
+  }
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    grid-column: 1/-1;
+  }
+}
+
+.add-more {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}

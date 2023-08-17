@@ -1,0 +1,22 @@
+.btn-tags {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    padding: 0.9rem 2.5rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    font-size: 1.6rem;
+    color: inherit;
+    border: $gray-20percent-color solid 1px;
+    background-color: $white-color;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &:hover {
+    border: $accent-dark-red-color solid 1px;
+  }
+}

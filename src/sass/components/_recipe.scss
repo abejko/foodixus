@@ -1,0 +1,219 @@
+.recipe-link {
+  padding-top: 4.5rem;
+  font-weight: 700;
+  font-size: 1.6;
+
+  @include media-breakpoint-down(md) {
+    padding-top: 14rem;
+    display: flex;
+    justify-content: center;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-top: 12rem;
+  }
+  @include media-breakpoint-down(sx) {
+    padding-top: 8rem;
+  }
+
+  & a {
+    text-decoration: none;
+    position: relative;
+    color: inherit;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $accent-dark-red-color;
+      visibility: hidden;
+      transition: visibility 0s, width 0.3s;
+    }
+
+    &:hover::after {
+      visibility: visible;
+      width: 100%;
+    }
+  }
+
+  & i {
+    padding: 0 2.2rem;
+  }
+}
+
+.recipe {
+  max-width: 120rem;
+  padding-top: 5rem;
+  display: flex;
+  margin: 0 auto;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 7rem;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-top: 5rem;
+  }
+
+  &__img-container {
+    position: relative;
+    filter: contrast(90%);
+    aspect-ratio: 10/10;
+    width: 45rem;
+    height: 45rem;
+
+    .heart-icon__outline,
+    .heart-icon__filled {
+      position: absolute;
+      font-size: 1.6rem;
+      color: $accent-light-red-color;
+      background-color: rgba(255, 255, 255, 0.699);
+      border-radius: 10rem;
+      padding: 2rem;
+      top: 2rem;
+      right: 2rem;
+      cursor: pointer;
+      z-index: 1;
+      transition: all 0.4s;
+    }
+  }
+
+  &__img {
+    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__img-container {
+      width: 35rem;
+      height: 35rem;
+    }
+    &__img {
+      border-radius: 2rem;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    padding-left: 6.8rem;
+    display: flex;
+    flex-direction: column;
+
+    &--header {
+      font-size: 4.6rem;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 3rem;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      align-items: center;
+      padding-left: 0rem;
+      text-align: center;
+      &--header {
+        padding-top: 3rem;
+      }
+    }
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  &__info {
+    padding-right: 2rem;
+    text-transform: uppercase;
+
+    & i {
+      color: $primary-green-color;
+      padding-right: 0.7rem;
+    }
+  }
+
+  &__info-data {
+    font-weight: 700;
+    padding-right: 0.5rem;
+  }
+
+  &__title {
+    padding-top: 2rem;
+
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+  }
+
+  &__ingredient-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem 3rem;
+    list-style: none;
+    padding-top: 2rem;
+
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: 1fr;
+    }
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__ingredient {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  &__check-icon {
+    font-size: 1.4rem;
+    color: $primary-green-color;
+    margin-right: 1.5rem;
+  }
+
+  &__quantity {
+    margin-right: 1rem;
+    font-weight: 700;
+  }
+}
+
+.return-back {
+  display: flex;
+  justify-content: center;
+  padding-top: 12rem;
+
+  &__btn {
+    display: inline-block;
+    text-decoration: none;
+    background: none;
+    padding: 1.5rem 5rem;
+    border-radius: 10rem;
+    border: 0.2rem solid $gray-text-color;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: inherit;
+    font-family: inherit;
+
+    & i {
+      padding-right: 1rem;
+    }
+
+    &:hover {
+      background-color: $secondary-blue-color;
+      border-color: $secondary-blue-color;
+      color: $white-color;
+    }
+  }
+}

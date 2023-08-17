@@ -1,0 +1,494 @@
+.background {
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* Set the left and right positions to make the box extend from the left edge to the right edge */
+  left: 0;
+  right: 0;
+  position: relative;
+  z-index: 2;
+
+  @include media-breakpoint-down(md) {
+    display: block;
+    position: fixed;
+    z-index: 5;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  max-height: 5.9rem;
+  padding: 5.2rem 0;
+  z-index: 3;
+
+  &__logo {
+    height: 2.8rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    position: sticky;
+    padding: 4.5rem 0;
+    z-index: 6;
+
+    &__logo {
+      height: 2.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 4rem 0;
+
+    &__logo {
+      height: 2rem;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    padding: 3.4rem 0;
+
+    &__logo {
+      height: 1.8rem;
+    }
+  }
+
+  .btn-mobile-nav {
+    display: none;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2.2rem;
+    color: inherit;
+
+    @include media-breakpoint-down(md) {
+      display: inline-block;
+      z-index: 2;
+
+      &__hamburger {
+        display: inline-block;
+      }
+    }
+  }
+
+  .mobile-nav-toggle {
+    display: none; /* Hide the menu by default */
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: $white-color;
+    width: 50vw;
+    height: 100vh;
+    z-index: 2;
+    overflow-y: auto;
+
+    @include media-breakpoint-down(md) {
+      display: block;
+      border-top: 1px solid $gray-20percent-color;
+      top: 9rem;
+    }
+    @include media-breakpoint-down(sm) {
+      border-top: 1px solid $gray-40percent-color;
+      top: 8rem;
+      width: 100vw;
+    }
+    @include media-breakpoint-down(xs) {
+      border-top: 1px solid $gray-40percent-color;
+      top: 6.8rem;
+      width: 100vw;
+      font-size: 1.4rem;
+    }
+
+    &__list {
+      list-style: none;
+      padding: 3rem 5rem;
+      margin: 0;
+      text-transform: uppercase;
+      font-style: inherit;
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+
+      @include media-breakpoint-down(sm) {
+        padding: 3rem 3rem;
+      }
+
+      @include media-breakpoint-down(xs) {
+        padding: 3rem 2rem;
+      }
+
+      &--link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      &--link-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.7rem 0 1.7rem 0;
+        color: inherit;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: $gray-20percent-color;
+        }
+      }
+    }
+
+    // & li {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   align-items: center;
+    //   padding: 1.7rem 0 1.7rem 0;
+    //   color: inherit;
+    //   position: relative;
+    //   cursor: pointer;
+
+    //   &::after {
+    //     content: "";
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 1px;
+    //     background-color: $gray-20percent-color;
+    //   }
+    // }
+
+    & i {
+      font-size: 1.6rem;
+      color: $gray-40percent-color;
+    }
+
+    &.show {
+      display: block; /* Show the menu when the .show class is applied */
+    }
+  }
+}
+
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+
+  @include media-breakpoint-down(md) {
+    display: block;
+    background-color: rgba(63, 63, 63, 0.644);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.mobile-nav-search {
+  position: relative;
+  margin: 5rem;
+
+  @include media-breakpoint-down(sm) {
+    margin: 5rem 3rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin: 5rem 2rem;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 55%;
+    left: 2rem;
+    transform: translateY(-50%) scaleX(-1);
+    pointer-events: none;
+    font-size: 2rem;
+    color: $gray-60percent-color;
+  }
+
+  &__field {
+    width: 100%;
+    padding: 1.7rem 2rem 1.7rem 0;
+    display: inline-block;
+    border-radius: 10rem;
+
+    font-family: inherit;
+    font-size: 1.8rem;
+
+    border: 1px solid $gray-40percent-color;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12),
+      0 0 1px rgba(0, 0, 0, 0.05) inset; /* Add light shadow */
+
+    padding-left: 5rem;
+
+    &::placeholder {
+      color: $gray-40percent-color;
+    }
+    &:focus {
+      outline: none;
+      border-color: $primary-green-color;
+      box-shadow: 0 0 0 2px $primary-green-color;
+    }
+  }
+}
+
+.search {
+  position: relative;
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 55%;
+    left: 2rem;
+    transform: translateY(-50%) scaleX(-1);
+    pointer-events: none;
+    font-size: 2rem;
+    color: $gray-60percent-color;
+  }
+
+  &__field {
+    width: 58rem;
+    padding: 1.7rem 2rem 1.7rem 0;
+    display: inline-block;
+    border-radius: 10rem;
+
+    font-family: inherit;
+    font-size: 1.8rem;
+
+    border: 1px solid $gray-40percent-color;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12),
+      0 0 1px rgba(0, 0, 0, 0.05) inset; /* Add light shadow */
+
+    padding-left: 5rem;
+
+    &::placeholder {
+      color: $gray-40percent-color;
+    }
+    &:focus {
+      outline: none;
+      border-color: $primary-green-color;
+      box-shadow: 0 0 0 2px $primary-green-color;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      width: 42rem;
+      padding: 1.7rem 2rem 1.7rem 0;
+      padding-left: 4.8rem;
+    }
+  }
+}
+
+// Search-modal///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.search-modal {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .visible {
+    display: block;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 55%;
+    left: 2rem;
+    transform: translateY(-50%) scaleX(-1);
+    pointer-events: none;
+    font-size: 2rem;
+    color: $gray-60percent-color;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__input {
+    width: 58rem;
+    padding: 1.7rem 2rem 1.7rem 0;
+    display: inline-block;
+    border-radius: 10rem;
+
+    font-family: inherit;
+    font-size: 1.8rem;
+
+    border: 1px solid $gray-40percent-color;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12),
+      0 0 1px rgba(0, 0, 0, 0.05) inset; /* Add light shadow */
+
+    padding-left: 5rem;
+
+    &::placeholder {
+      color: $gray-40percent-color;
+    }
+    &:focus {
+      outline: none;
+      border-color: $primary-green-color;
+      box-shadow: 0 0 0 2px $primary-green-color;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 38rem;
+      padding: 1.4rem 2rem 1.4rem 0;
+      padding-left: 4.8rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 30rem;
+      padding: 1.2rem 2rem 1.2rem 0;
+      padding-left: 4.8rem;
+      font-size: 1.6rem;
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: 18rem;
+      padding: 1.1rem 2rem 1.1rem 0;
+      padding-left: 4.3rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__close-icon {
+    padding-left: 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 2.5rem;
+      padding-left: 1.8rem;
+    }
+    @include media-breakpoint-down(xs) {
+      padding-left: 1.4rem;
+    }
+  }
+}
+
+.signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // position: relative;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
+
+  &.invisible {
+    visibility: hidden;
+  }
+
+  &__search-icon {
+    display: none;
+    cursor: pointer;
+
+    @include media-breakpoint-down(md) {
+      display: flex;
+      font-size: 2.4rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 2.1rem;
+    }
+  }
+
+  &__icon {
+    font-size: 2.7rem;
+    margin-right: 0.5rem;
+    color: inherit;
+
+    @include media-breakpoint-down(sm) {
+      height: 2.5rem;
+    }
+  }
+
+  &__divider {
+    display: none;
+    width: 1px;
+    height: 2rem; /* Adjust the height of the divider */
+    background-color: $gray-40percent-color;
+    margin: 0 1rem; /* Adjust the margin between the icons and the divider */
+
+    @include media-breakpoint-down(md) {
+      display: block; /* Show the icon at 1000px and above */
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+
+  &__text {
+    position: relative;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.6rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $accent-dark-red-color; // Use your desired color for the underline
+      visibility: hidden;
+      transition: visibility 0s, width 0.3s;
+    }
+
+    &:hover::after {
+      visibility: visible;
+      width: 100%;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    width: 200px;
+    background-color: $white-color;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+
+    &:hover {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    & a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #f4f4f4; /* Apply gray background color on hover */
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+.account {
+  position: relative;
+  // background-color: $gray-10percent-color;
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  line-height: 1.4;
+
+  gap: 5rem;
+
+  &__main-title {
+    font-size: 3.5rem;
+  }
+  &__sub-title {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  &__grid-two-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    &__main-title {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+    &__sub-title {
+      font-size: 1.6rem;
+      padding-bottom: 2rem;
+      text-align: center;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    &__grid-two-cols {
+      grid-template-columns: 1fr;
+      max-width: 80rem;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &__grid-two-cols {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.form {
+  padding: 4rem 5rem;
+  border: solid 0.5px $gray-20percent-color;
+  // background-color: $gray-5percent-color;
+
+  &__row {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 24rem 1fr;
+    gap: 2.4rem;
+    padding: 1.2rem 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:has(button) {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.2rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 3rem 0rem;
+    border: none;
+    border-top: solid 0.5px $gray-20percent-color;
+
+    &__row {
+      grid-template-columns: 10rem 1fr;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__input {
+    border: 1px solid $gray-40percent-color;
+    background-color: $gray-10percent-color;
+    border-radius: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+  &__btn {
+    font-size: 1.4rem;
+    padding: 1.2rem 1.6rem;
+    font-weight: 700;
+
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+
+    color: $gray-60percent-color;
+    border: 1px solid $gray-40percent-color;
+    cursor: pointer;
+
+    &:first-child {
+      background: $gray-10percent-color;
+
+      &:hover {
+        background: $gray-20percent-color;
+      }
+    }
+
+    &:nth-child(2) {
+      border: solid 0.1rem $accent-light-red-color;
+      background-color: $accent-light-red-color;
+      color: white;
+
+      &:hover {
+        border: solid 0.1rem $accent-dark-red-color;
+        background-color: $accent-dark-red-color;
+      }
+    }
+  }
+
+  &__file-input {
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+
+    &::file-selector-button {
+      font: inherit;
+      font-weight: 500;
+      padding: 0.8rem 1.2rem;
+      margin-right: 1.2rem;
+      border-radius: 0.5rem;
+      border: none;
+      color: $white-color;
+      background-color: $accent-light-red-color;
+      cursor: pointer;
+      transition: color 0.2s, background-color 0.2s;
+
+      &:hover {
+        background-color: $accent-dark-red-color;
+      }
+    }
+  }
+}

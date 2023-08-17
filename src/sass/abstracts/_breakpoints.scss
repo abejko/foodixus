@@ -1,0 +1,86 @@
+// File: abstracts/_mixins.scss
+
+$breakpoints: (
+  // 530px
+  xs: 33.1em,
+  // 750px
+  sm: 46.8em,
+  // 1000px
+  md: 62.5em,
+  // 1300px
+  lg: 81.2em,
+  // 1600px
+  xl: 100em
+);
+
+//  -USAGE
+//  -Styles that apply to screen sizes equal to or larger than 530px (xs).
+//   @include media-breakpoint-up(xs) {
+//     // Your styles here...
+//   }
+
+//  -Styles that apply to screen sizes smaller than 750px (sm).
+//   @include media-breakpoint-down(sm) {
+//     // Your styles here...
+//   }
+
+//   -Styles that apply to screen sizes between 750px (sm) and 1000px (md), inclusive.
+//   @include media-breakpoint-between(sm, md) {
+//     // Your styles here...
+//   }
+//
+
+// Media Breakpoint Mixin
+@mixin media-breakpoint-down($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    // Write the media query.
+    @media (max-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin media-breakpoint-between($lower, $upper) {
+  // If both the lower and upper breakpoints exist in the map.
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    // Get the lower and upper breakpoints.
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+    // Write the media query.
+    @media (min-width: $lower-breakpoint) and (max-width: $upper-breakpoint) {
+      @content;
+    }
+  } @else {
+    // If lower breakpoint is invalid.
+    @if (map-has-key($breakpoints, $lower) == false) {
+      // Log a warning.
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+    // If upper breakpoint is invalid.
+    @if (map-has-key($breakpoints, $upper) == false) {
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}

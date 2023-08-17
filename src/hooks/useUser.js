@@ -1,0 +1,15 @@
+import { useQuery } from "react-query";
+import { getCurrentUser } from "../services/apiAuth";
+
+export function useUser() {
+  const { isLoading, data: user } = useQuery({
+    queryKey: ["user"],
+    queryFn: getCurrentUser,
+  });
+
+  return {
+    isLoading,
+    user,
+    isAuthenticated: !!user?.email, // Check if user has an email (or use a different property)
+  };
+}

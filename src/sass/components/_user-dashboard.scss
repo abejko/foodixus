@@ -1,0 +1,350 @@
+// .user-dashboard {
+//   display: grid;
+//   grid-template-columns: 30% 70%;
+// }
+
+.user-dashboard {
+  overflow: hidden;
+  @include media-breakpoint-down(md) {
+    padding-top: 8rem;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-top: 8rem;
+  }
+}
+.user-section {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__photo {
+    height: 8rem;
+    width: 8rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10rem;
+
+    & img {
+      height: 8rem;
+      display: block;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      // border-radius: 10rem;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      background-color: $gray-text-color; /* Adjust the transparency here */
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Show the overlay on hover */
+    &:hover::before {
+      opacity: 0.2;
+    }
+
+    &--icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 3rem;
+      z-index: 2;
+      color: white;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+
+    /* Show the overlay on hover */
+    &:hover .user-section__photo--icon {
+      opacity: 0.8; // Show the icon on hover
+    }
+  }
+
+  /* Add the ::before pseudo-element for the overlay */
+
+  .user {
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__name {
+      font-size: 2.5rem;
+      padding-bottom: 1.4rem;
+    }
+    &__logout {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.8rem 3em;
+      font-weight: 700;
+      color: $secondary-blue-color;
+      background-color: $white-color;
+      border: solid 0.1rem $secondary-blue-color;
+      border-radius: 10rem;
+
+      &:hover {
+        background-color: $secondary-blue-color;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__photo {
+      height: 10rem;
+      width: 10rem;
+    }
+
+    & img {
+      height: 10rem;
+      display: block;
+    }
+    .user {
+      padding: 1rem 0rem;
+
+      &__name {
+        font-size: 2.5rem;
+        padding-bottom: 1.4rem;
+      }
+      &__logout {
+        padding: 0.8rem 2.2em;
+      }
+    }
+  }
+}
+
+// .saved-recipes {
+//   padding-top: 5rem;
+// }
+
+.text-box {
+  display: flex;
+  text-transform: uppercase;
+  padding-bottom: 4rem;
+  position: relative;
+  cursor: pointer;
+
+  &__saved-recipes,
+  &__created-recipes,
+  &__seetings {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin-right: 5rem;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+
+    &:last-child {
+      margin-right: 0; // Set the right padding to 0 for the last child
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      height: 1px;
+      background-color: $accent-dark-red-color;
+      visibility: hidden;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      visibility: visible;
+      width: 100%;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-bottom: 3rem;
+    justify-content: center;
+
+    &__saved-recipes,
+    &__created-recipes,
+    &__seetings {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    &__saved-recipes,
+    &__created-recipes,
+    &__seetings {
+      font-size: 1.6rem;
+      margin-right: 2rem;
+      white-space: nowrap;
+    }
+  }
+}
+
+.no-recipe-message {
+  padding-bottom: 3rem;
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
+}
+
+.active-tab {
+  border-bottom: 1px solid $accent-dark-red-color;
+}
+
+.add-new-recipe {
+  border: 0.3rem dashed $gray-40percent-color;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    & img {
+      height: 7rem;
+      padding-bottom: 1rem;
+
+      // color: $secondary-blue-color;
+    }
+    & p {
+      color: $secondary-blue-color;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    @include media-breakpoint-down(sm) {
+      & img {
+        height: 6rem;
+        padding-bottom: 1rem;
+      }
+      & p {
+        font-size: 1.6rem;
+      }
+    }
+    @include media-breakpoint-down(xs) {
+      & img {
+        height: 5rem;
+      }
+      & p {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+.add-new-recipe.no-recipes {
+  max-width: 24rem;
+  height: 21.7rem;
+
+  @include media-breakpoint-down(md) {
+    grid-column: 2/3;
+  }
+  @include media-breakpoint-down(sm) {
+    height: 20rem;
+  }
+  @include media-breakpoint-down(xs) {
+    height: 11.6rem;
+  }
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 15rem 0;
+  text-align: center;
+
+  &__heading {
+    font-size: 3rem;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem;
+
+    & button:nth-child(1) {
+      position: relative;
+      border-radius: 10rem;
+      color: $white-color;
+      font-family: inherit;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      background-color: $accent-light-red-color;
+      width: 28rem;
+      height: 5.5rem;
+      justify-self: center;
+      margin: 2rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid transparent;
+        border-radius: 10rem;
+        transition: border-color 0.3s;
+      }
+
+      &:hover {
+        color: $accent-light-red-color;
+        background-color: $white-color;
+        border-color: $accent-light-red-color;
+      }
+
+      &:hover::before {
+        border-color: $accent-light-red-color;
+      }
+
+      @include media-breakpoint-down(xs) {
+        width: 25rem;
+        height: 4.5rem;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 1.5rem;
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 7rem 0;
+
+    &__heading {
+      font-size: 2.5rem;
+    }
+    &__buttons {
+      padding: 3rem 0;
+      grid-template-columns: auto;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    &__buttons {
+      padding: 3rem 0;
+      grid-template-columns: auto;
+    }
+  }
+}

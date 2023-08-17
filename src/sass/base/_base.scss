@@ -1,0 +1,65 @@
+/*
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Assistant", sans-serif;
+  // line-height: 1.7;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: $gray-text-color;
+  overflow: scroll;
+
+  /* Set minimum height of the body to 100vh */
+}
+
+main {
+  min-height: 90vh;
+}
+
+.container {
+  max-width: 148rem;
+  margin: 0 auto;
+
+  @include media-breakpoint-down(xl) {
+    margin: 0 8rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin: 0 5rem;
+  }
+  // 700px
+  @include media-breakpoint-down(sm) {
+    margin: 0 3rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin: 0 1.5rem;
+  }
+
+  /* 380px */
+  @media (max-width: 23.75em) {
+    min-width: 38rem;
+    padding: 0 1rem;
+  }
+}

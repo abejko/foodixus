@@ -1,0 +1,70 @@
+.footer {
+  margin-top: 3rem;
+  position: relative;
+  padding: 1.5rem 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    padding: 3rem;
+    top: 0;
+    left: -100%;
+    right: -100%;
+    bottom: 0;
+    border-top: solid 1px $gray-10percent-color;
+    // background-color: $gray-10percent-color;
+    z-index: -1;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    &--divider {
+      width: 1px;
+      height: 2rem;
+      background-color: $gray-40percent-color;
+      margin: 0 1rem;
+    }
+  }
+  &__link {
+    &--instagram {
+      color: $gray-40percent-color;
+      display: flex;
+      font-size: 3rem;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &--text {
+      font-size: 1.6rem;
+    }
+  }
+
+  // 1300px
+  @include media-breakpoint-down(lg) {
+    &__list {
+      justify-content: center;
+    }
+    &__link {
+      &--text {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  // 750px
+  @include media-breakpoint-down(sm) {
+    &__list {
+      justify-content: center;
+    }
+    &__link {
+      &--text {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

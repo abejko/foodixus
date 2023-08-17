@@ -1,0 +1,59 @@
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2.4rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &__arrow--left {
+    font-size: 2rem;
+    color: inherit;
+    border: none;
+    outline: none;
+    background: none;
+    text-shadow: none;
+    cursor: pointer;
+    padding-right: 1rem;
+  }
+  &__arrow--right {
+    font-size: 2rem;
+    color: inherit;
+    border: none;
+    outline: none;
+    background: none;
+    text-shadow: none;
+    cursor: pointer;
+    padding-left: 1rem;
+  }
+  &__arrow--left {
+    font-size: 2rem;
+    color: inherit;
+    border: none;
+    outline: none;
+    background: none;
+    text-shadow: none;
+    cursor: pointer;
+  }
+
+  &__viewport {
+    overflow: hidden;
+    flex-grow: 1;
+  }
+
+  &__search-tags {
+    margin-right: 1rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0; /* Remove default padding for ul */
+    transform: translateX(0); /* Reset transform for the tags */
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+  }
+
+  // Add margin between carousel items
+  &__search-tags--link {
+    margin-right: 1rem; /* Adjust the value as needed */
+  }
+}

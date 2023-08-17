@@ -1,0 +1,22 @@
+/* main.scss */
+
+/* Import abstracts */
+@import "abstracts/variables";
+@import "abstracts/breakpoints";
+
+/* Import base styles */
+@import "base/base";
+
+/* Import components */
+@import "components/account";
+@import "components/add-recipe";
+@import "components/buttons";
+@import "components/carousel";
+@import "components/footer";
+@import "components/header";
+@import "components/hero";
+@import "components/login";
+@import "components/pagination";
+@import "components/recipe";
+@import "components/search-results";
+@import "components/user-dashboard";
