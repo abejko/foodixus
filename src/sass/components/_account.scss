@@ -37,7 +37,7 @@
   @include media-breakpoint-down(lg) {
     &__grid-two-cols {
       grid-template-columns: 1fr;
-      max-width: 80rem;
+      // max-width: 80rem;
     }
   }
   @include media-breakpoint-down(sm) {
@@ -45,12 +45,12 @@
       grid-template-columns: 1fr;
     }
   }
-  @include media-breakpoint-down(xs) {
-    &__grid-two-cols {
-      max-width: 35rem;
-      margin: 0 auto;
-    }
-  }
+  // @include media-breakpoint-down(xs) {
+  //   &__grid-two-cols {
+  //     max-width: 35rem;
+  //     margin: 0 auto;
+  //   }
+  // }
 }
 
 .form {
