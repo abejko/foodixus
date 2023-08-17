@@ -64,6 +64,7 @@
     @include media-breakpoint-down(md) {
       display: inline-block;
       z-index: 2;
+      font-size: 2rem;
 
       &__hamburger {
         display: inline-block;
@@ -95,7 +96,6 @@
     @include media-breakpoint-down(xs) {
       border-top: 1px solid $gray-40percent-color;
       top: 6.8rem;
-      width: 100vw;
       font-size: 1.4rem;
     }
 

@@ -1,4 +1,5 @@
 .login {
+  overflow-y: scroll;
   &__container {
     max-width: 100%;
     display: flex;
@@ -351,7 +352,7 @@
 .info {
   display: flex;
   justify-content: center;
-  padding-top: 2rem;
+  padding: 2rem 0 4rem 0;
   text-align: center;
 
   &--link {

@@ -24,7 +24,7 @@ const store = configureStore({
     getDefaultMiddleware().concat(recipesApi.middleware),
 });
 
-console.log(store.getState());
+
 
 setupListeners(store.dispatch);
 

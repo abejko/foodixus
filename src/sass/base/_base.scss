@@ -20,6 +20,7 @@ Large: 1.8
 
 html {
   font-size: 62.5%;
+  overflow: auto;
 }
 
 body {
@@ -28,9 +29,8 @@ body {
   font-size: 1.8rem;
   font-weight: 400;
   color: $gray-text-color;
-  overflow-x: hidden;
-
   /* Set minimum height of the body to 100vh */
+  overflow-x: hidden;
 }
 
 main {
@@ -58,8 +58,8 @@ main {
   }
 
   /* 380px */
-  @media (max-width: 23.75em) {
-    min-width: 38rem;
-    padding: 0 1rem;
-  }
+  // @media (max-width: 23.75em) {
+  //   min-width: 38rem;
+  //   padding: 0 1rem;
+  // }
 }

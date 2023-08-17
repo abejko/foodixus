@@ -27,8 +27,6 @@ const recipesApi = createApi({
   }),
 });
 
-console.log(recipesApi);
-
 export const {
   useLoadRecipeQuery,
   useLoadSearchResultsQuery,
