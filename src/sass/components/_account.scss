@@ -45,7 +45,7 @@
       grid-template-columns: 1fr;
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(xs) {
     &__grid-two-cols {
       max-width: 35rem;
       margin: 0 auto;
