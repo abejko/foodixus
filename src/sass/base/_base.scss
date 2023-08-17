@@ -41,6 +41,10 @@ main {
   max-width: 148rem;
   margin: 0 auto;
 
+  // overflow: overlay;
+
+  // overflow-x: auto;
+  // overflow-y: scroll;
   @include media-breakpoint-down(xl) {
     margin: 0 8rem;
   }
