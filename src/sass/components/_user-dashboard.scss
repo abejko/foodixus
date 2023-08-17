@@ -149,7 +149,7 @@
     color: inherit;
 
     &:last-child {
-      margin-right: 0; // Set the right padding to 0 for the last child
+      margin-right: 0;
     }
 
     &::after {
@@ -187,7 +187,8 @@
     &__seetings {
       font-size: 1.6rem;
       margin-right: 2rem;
-      white-space: nowrap;
+      letter-spacing: 0;
+      font-weight: 700;
     }
   }
 }
@@ -262,7 +263,8 @@
     height: 20rem;
   }
   @include media-breakpoint-down(xs) {
-    height: 11.6rem;
+    grid-column: 1/2;
+    // width: 30rem;
   }
 }
 

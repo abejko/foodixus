@@ -28,7 +28,7 @@ body {
   font-size: 1.8rem;
   font-weight: 400;
   color: $gray-text-color;
-  overflow: scroll;
+  overflow-x: hidden;
 
   /* Set minimum height of the body to 100vh */
 }
