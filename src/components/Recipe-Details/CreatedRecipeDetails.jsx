@@ -10,8 +10,8 @@ function CreatedRecipeDetails() {
 
   const recipe = createdRecipes.find((recipe) => recipe.id === id);
 
-  console.log("Recipe ID:", id);
-  console.log("Found Recipe:", recipe);
+  // console.log("Recipe ID:", id);
+  // console.log("Found Recipe:", recipe);
   if (!recipe) {
     return <div>Recipe not found</div>;
   }

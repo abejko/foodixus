@@ -12,7 +12,7 @@ function Header() {
   const dispatch = useDispatch();
   const location = useLocation();
   const isHome = location.pathname === "/";
-  console.log("Is Home:", isHome);
+  // console.log("Is Home:", isHome);
 
   const handleLogoClick = () => {
     // Clear the search query from Redux state and the URL

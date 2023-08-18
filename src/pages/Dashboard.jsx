@@ -11,8 +11,6 @@ function Dashboard() {
 
   const { user } = useUser();
 
-  console.log(user);
-
   const fullName = user?.user_metadata?.fullName || "Update your full name";
   const avatar = user?.user_metadata?.avatar;
 

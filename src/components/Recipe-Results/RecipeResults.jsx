@@ -25,7 +25,7 @@ function RecipeResults({ paginatedResults, setPage }) {
     error,
   } = useLoadSearchResultsQuery(query);
 
-  console.log("searchResults:", searchResults);
+  // console.log("searchResults:", searchResults);
 
   useEffect(() => {
     if (searchResults) {
@@ -40,7 +40,7 @@ function RecipeResults({ paginatedResults, setPage }) {
         };
       });
 
-      console.log("Mapped Results", mappedResults);
+      // console.log("Mapped Results", mappedResults);
 
       dispatch(setSearchResults(mappedResults));
       // Start pagination from page 1 after every new search
