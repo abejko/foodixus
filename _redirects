@@ -2,12 +2,13 @@
 /*    /index.html   200
 
 # Redirect to index.html for specific routes
-/search/* /index.html   200
-/:id/*    /index.html   200
-/created-recipes/:id/*    /index.html   200
-/login/:view?/*    /index.html   200
-/dashboard/*    /index.html   200
-/add-recipe/*    /index.html   200
-/dashboard/saved-recipes/*    /index.html   200
-/dashboard/created-recipes/*    /index.html   200
-/dashboard/account/*    /index.html   200
+/search/* /index.html   404
+/:id/*    /index.html   404
+/created-recipes/:id/*    /index.html   404
+/login/:view?/*    /index.html   404
+/dashboard/*    /index.html   404
+/add-recipe/*    /index.html   404
+/dashboard/saved-recipes/*    /index.html   404
+/dashboard/created-recipes/*    /index.html   404
+/dashboard/account/*    /index.html   404
+
