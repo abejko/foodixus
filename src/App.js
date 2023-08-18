@@ -29,7 +29,7 @@ function App() {
         {!isLoginPage && <Header />}
 
         <Routes>
-          <Route to="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="search" element={<SearchResults />} />
           <Route path=":id" element={<RecipeDetails />} />
           <Route
