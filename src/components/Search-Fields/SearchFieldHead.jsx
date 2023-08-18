@@ -1,8 +1,10 @@
 import { IoSearchSharp } from "react-icons/io5";
 import { setSearchQuery } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function SearchFieldHead() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { query } = useSelector((state) => state.recipe.search);
 
@@ -11,6 +13,7 @@ function SearchFieldHead() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    navigate(`/search?query=${encodeURIComponent(query)}`);
   };
 
   return (
