@@ -4,6 +4,7 @@
 // }
 
 .user-dashboard {
+  overflow: hidden;
   @include media-breakpoint-down(md) {
     padding-top: 8rem;
   }
@@ -146,6 +147,7 @@
     position: relative;
     text-decoration: none;
     color: inherit;
+    white-space: nowrap;
 
     &:last-child {
       margin-right: 0;
