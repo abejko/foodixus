@@ -4,7 +4,6 @@
 // }
 
 .user-dashboard {
-  overflow: hidden;
   @include media-breakpoint-down(md) {
     padding-top: 8rem;
   }
@@ -189,6 +188,15 @@
       font-size: 1.6rem;
       margin-right: 1.3rem;
       letter-spacing: 0;
+      font-weight: 700;
+    }
+  }
+  @include media-breakpoint-down(xxs) {
+    &__saved-recipes,
+    &__created-recipes,
+    &__seetings {
+      font-size: 1.4rem;
+      margin-right: 1rem;
       font-weight: 700;
     }
   }
