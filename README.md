@@ -59,7 +59,7 @@ Explore save and create cecipes from Forkify API.
 
 ## Demo
 
-Experience Foodixus: [Demo](https://foodixus.netlify.app/)
+You can see a live demo of this project [here](https://foodixus.vercel.app/).
 
 ---
 
