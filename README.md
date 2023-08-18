@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Foodixus - A responsive food website built with React, Sass, and Redux.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Explore save and create cecipes from Forkify API.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Highlights](#highlights)
+- [Features](#features)
+- [API](#api)
+- [Demo](#demo)
+- [Authentication](#authentication)
+- [Installation and Setup](#installation-and-setup)
+- [Connect](#connect)
+- [Thank You](#thank-you)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Highlights
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Responsive Design
+- React, Sass, Redux
+- Discover, Save & Create Recipes
+- User-Friendly Experience
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- **Search Tags for Easy Exploration**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - Foodixus offers search tags to help user explore recipes effortlessly.
+  - Utilize search tags to quickly find recipes based on specific categories and types.
+  - Combine search tags with keywords for a tailored culinary experience.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Saved Recipes**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - Save your favorite recipes to your personal dashboard.
+  - Easily manage and organize your saved recipes.
 
-### `npm run eject`
+- **Created Recipes**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  - Showcase your culinary skills by creating and sharing your own unique recipes.
+  - Customize your recipes with ingredients, instructions, and images.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Authentication**
+  - Foodixus provides a secure user authentication system.
+  - Users can create accounts with email and password.
+  - Users can also update the avatar photo.
+  - User authentication is managed using Redux and a server-side backend Supabase.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## API
 
-## Learn More
+- Connects to [Forkify API](https://forkify-api.herokuapp.com/v2)
+- Broad Variety of Recipes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Demo
 
-### Code Splitting
+Experience Foodixus: [Demo](https://foodixus.netlify.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Installation and Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **Clone**: `git clone https://github.com/your-username/foodixus.git`
+2. **Install**: `cd foodixus` & `npm install`
+3. **Run**: `npm start`
+4. **Explore**: Open `http://localhost:3000`
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Connect
 
-### Advanced Configuration
+Email: [andi.bejko@gmail.com](mailto:andi.bejko@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Thank You
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Thank you for exploring Foodixus.
 
-### `npm run build` fails to minify
+Best,
+Andi Bejko
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_Disclaimer: Foodixus is a conceptual name used for illustrative purposes in this template. Replace with your project name and contact._
