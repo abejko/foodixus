@@ -2,6 +2,24 @@
 
 Explore save and create cecipes from Forkify API.
 
+## Screenshots of the Project 📸
+
+### Home page 🏡
+
+![Home page](/src/assets/foodixus-screenshots/home.jpg)
+
+### Search results
+
+![Search results](/src/assets/foodixus-screenshots/search-results.jpg)
+
+### Recipe details
+
+![Recipe details](/src/assets/foodixus-screenshots/recipe-details.jpg)
+
+### Dashboard
+
+![Dashboard](/src/assets/foodixus-screenshots/dashboard.jpg)
+
 ## Table of Contents
 
 - [Highlights](#highlights)
